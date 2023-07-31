@@ -1,0 +1,46 @@
+POST http://localhost:3000/book/create_book
+Content-Type: application/json
+
+{
+    "title": "Thus Spake Zarathustra",
+    "publication_year": 1883,
+    "pages": 400,
+    "average_rating": 4.8,
+    "number_of_reviews": 112,
+    "authors": [
+        {
+            "name": "Freidrich Nietzsche"
+        }
+    ],
+    "genres": [
+        {
+            "genre": "Philosophy"
+        }
+    ]
+}
+
+##############
+POST http://localhost:3000/book/add_author
+Content-Type: application/json
+
+{
+    "name": "Friedrich Nietzsche",
+}
+
+##############
+GET http://localhost:3000/book/
+
+##############
+POST http://localhost:3000/user/new
+Content-Type: application/json
+
+{
+    "user_name": "Friedrich Nietzsche",
+    "email": "Nietzsche@gmail.com",
+    "password": "Friedrich Nietzsche",
+    "nationality": "German"
+}
+
+##############
+POST http://localhost:3000/user/6/1
+Content-Type: application/json
