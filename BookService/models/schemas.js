@@ -117,10 +117,14 @@ User.hasMany(Review);
 Review.belongsTo(User);
 
 const Shelf = db_client.define('shelf', {
-    user_id: DataTypes.INTEGER,
-    shelf_type: DataTypes.INTEGER,
-}, {
-    primarykey: ['user_id', 'shelf_type']
+    user_id: {
+        type: DataTypes.INTEGER,
+        primaryKey: true
+    },
+    shelf_type: {
+        type: DataTypes.INTEGER,
+        primaryKey: true
+    }
 });
 
 User.hasMany(Shelf);
