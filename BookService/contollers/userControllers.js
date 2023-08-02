@@ -9,27 +9,9 @@ const add_user = async (req, res) => {
             nationality: req.body.nationality,
         });
         const user_id = new_user.user_id;
-        await schemas.Shelf.create({user_id: user_id, shelf_type: 0},
-            {
-              primaryKey: true,
-              unique: true,
-              fields: ['user_id', 'shelf_type']
-            }
-        );
-        await schemas.Shelf.create({user_id: user_id, shelf_type: 1},
-            {
-              primaryKey: true,
-              unique: true,
-              fields: ['user_id', 'shelf_type']
-            }
-        );
-        await schemas.Shelf.create({user_id: user_id, shelf_type: 2},
-            {
-              primaryKey: true,
-              unique: true,
-              fields: ['user_id', 'shelf_type']
-            }
-        );
+        await schemas.Shelf.create({user_id: user_id, shelf_type: 0});
+        await schemas.Shelf.create({user_id: user_id, shelf_type: 1});
+        await schemas.Shelf.create({user_id: user_id, shelf_type: 2});
         res.status(201).json(new_user)
     } catch(e){
         res.status(400).json({message: e.message})
@@ -48,7 +30,7 @@ const add_book_to_shelf = async (req, res) => {
                 shelf_type: req.params.shelf_type
             }
         });
-        await shelf.addBook();
+        await shelf.addBook(book);
         res.status(201).json({message: "Book succesfully added to shelf"});
     } catch(e){
         res.status(400).json({message: e.message});

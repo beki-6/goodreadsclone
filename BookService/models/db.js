@@ -2,7 +2,7 @@ require('dotenv').config();
 const { Sequelize } = require('sequelize');
 
 const db_client = new Sequelize(
-    "goodreadsclone",
+    "goodreadsclone2",
     process.env.POSTGRES_HOSTNAME,
     process.env.POSTGRES_PWD,
     {

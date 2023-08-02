@@ -9,7 +9,7 @@ Content-Type: application/json
     "number_of_reviews": 112,
     "authors": [
         {
-            "name": "Freidrich Nietzsche"
+            "name": "Friedrich Nietzsche"
         }
     ],
     "genres": [
@@ -35,12 +35,12 @@ POST http://localhost:3000/user/new
 Content-Type: application/json
 
 {
-    "user_name": "Friedrich Nietzsche",
-    "email": "Nietzsche@gmail.com",
-    "password": "Friedrich Nietzsche",
-    "nationality": "German"
+    "user_name": "Helen Hailu",
+    "email": "elle@gmail.com",
+    "password": "dandelions",
+    "nationality": "Ethiopian"
 }
 
 ##############
-POST http://localhost:3000/user/3/1/2
+POST http://localhost:3000/user/3/2
 Content-Type: application/json
